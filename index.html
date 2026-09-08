@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tushar · Data Analyst / BI Analyst</title>
+<meta name="description" content="Portfolio of Tushar, Data Analyst and Business Intelligence Analyst. Dashboards, forecasting, and reporting with quantified business impact.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232563eb%22/><text x=%2250%22 y=%2270%22 font-family=%22Arial,sans-serif%22 font-size=%2262%22 font-weight=%22800%22 fill=%22white%22 text-anchor=%22middle%22>T</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=16">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.535-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405 1.02 0 2.04.135 3 .405 2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="icon-medium" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.38-2.88-3.38-6.42s1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></symbol>
+  <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+</svg>
+
+<div class="noise-overlay"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">~/tushar/<span id="navCurrent" class="nav-current">home</span></a>
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div id="tsparticles" class="particle-net" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Hey, I'm</p>
+    <h1 class="hero-name">Tushar</h1>
+    <h2 class="hero-role">Data Analyst <span class="sep">·</span> Business Intelligence Analyst</h2>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="assets/Tushar_Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a href="mailto:tus2025snoop@outlook.com" class="btn btn-ghost">Email me</a>
+    </div>
+    <div class="hero-links">
+      <a href="https://github.com/tus2014ar" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-github"/></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/fnu-tushar-945648131/" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-linkedin"/></svg>LinkedIn</a>
+      <a href="https://medium.com/@tusharsingh_37238" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-medium"/></svg>Medium</a>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Terminal showing: whoami, printing a short bio &#8212; I turn raw data into dashboards and decisions leadership can act on, most recently as a Data Science Intern at Barton Malow, with 5+ years of experience in Data Engineering and Analytics across Oracle and Accenture, currently deepening my analytics and BI foundations at Penn State; then a CI-gated git workflow: branch, commit, pull request, passing CI check, and merge.">
+      <div class="terminal-bar">
+        <span class="terminal-dot dot-red"></span>
+        <span class="terminal-dot dot-yellow"></span>
+        <span class="terminal-dot dot-green"></span>
+        <span class="terminal-title">tushar@shipit: ~/alzheimers-market-overview</span>
+      </div>
+      <pre class="terminal-body"><code id="terminalOutput"></code><span class="terminal-cursor">&#9608;</span></pre>
+    </div>
+  </div>
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <span></span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ IMPACT STRIP ============ -->
+  <section class="impact-strip" aria-label="Career highlights">
+    <div class="impact-inner">
+      <div class="impact-item">
+        <span class="impact-number">202,499</span>
+        <span class="impact-label">row dataset analyzed across brand, specialty, and channel</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-number">83%</span>
+        <span class="impact-label">event planning timeline cut (12 months to 2) via data-driven workflows</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-number">99%</span>
+        <span class="impact-label">on-time KPI dashboard delivery at Oracle</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-number">$142K</span>
+        <span class="impact-label">platform spend surfaced via leadership dashboard at Barton Malow</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-number">235</span>
+        <span class="impact-label">attendees forecasted for 2026 via a blended trend model</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section id="story" class="section story-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">$ git log --oneline --graph</p>
+      <h2 class="section-title">How I got here</h2>
+      <p class="principles-lede">
+        Five years of turning raw data into dashboards people actually use set the direction. Every
+        stop since has been about shortening the distance between a number and a decision.
+      </p>
+
+      <div class="story-log">
+        <article class="story-commit">
+          <span class="commit-hash">7f3a2c1</span>
+          <span class="commit-meta">Accenture · Jun 2019 – Feb 2022</span>
+          <p class="commit-msg">feat: SQL-based validation + reporting framework, -60% discrepancies</p>
+          <p class="commit-detail">First real lesson in production reporting: a 4.5M-customer billing base doesn't forgive a wrong number on a dashboard. Built row-level checks and reconciliation reports that cut discrepancies 60% and shortened month-end close by 10%.</p>
+        </article>
+        <article class="story-commit">
+          <span class="commit-hash">c9e81b4</span>
+          <span class="commit-meta">Oracle Corporation · Feb 2022 – Dec 2024</span>
+          <p class="commit-msg">feat: automated KPI dashboards, 99% on-time delivery</p>
+          <p class="commit-detail">Moved from ad hoc reporting to automated KPI dashboards (churn, usage patterns) that leadership could track every week, with 98%+ accuracy holding across 600K+ subscriber billing records. Earned "Best Upcoming Talent," FY23 Q3.</p>
+        </article>
+        <article class="story-commit">
+          <span class="commit-hash">a10d5e7</span>
+          <span class="commit-meta">Penn State Research · Sep 2025 – May 2026</span>
+          <p class="commit-msg">feat: event analytics + scenario dashboards, -83% planning time</p>
+          <p class="commit-detail">Consolidated 6 disparate Excel sources into one KPI model and built scenario dashboards that moved event planning from reactive to data-informed, cutting the timeline from 12 months to 2.</p>
+        </article>
+        <article class="story-commit">
+          <span class="commit-hash">f42b901</span>
+          <span class="commit-meta">Barton Malow · May 2026 – Aug 2026</span>
+          <p class="commit-msg">feat: leadership dashboards shipped to production</p>
+          <p class="commit-detail">Where the two threads met: a 4-tab cost dashboard surfacing $142K in platform spend, and a data quality dashboard keeping 23 production tables clean and reportable.</p>
+        </article>
+      </div>
+
+      <div class="story-close">
+        The throughline: every role shortened the distance between a number and a decision, first
+        through reports, then dashboards, then scenario models. The Barton Malow work is what all
+        four look like combined into one.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENGINEERING PRINCIPLES ============ -->
+  <section id="principles" class="section principles-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">$ cat PRINCIPLES.md</p>
+      <h2 class="section-title">The pragmatic builder</h2>
+      <p class="principles-subtitle">Everything I build is grounded in a production mindset.</p>
+      <p class="principles-lede">
+        "Understanding existing systems deeply before changing them, designing for the next person who has
+        to maintain my work, and communicating technical findings in a way non-technical stakeholders can
+        act on." That’s the standard I actually build to.
+      </p>
+
+      <div class="principles-grid">
+        <a class="principle-card" href="#experience">
+          <span class="principle-mark">01</span>
+          <h4>A dashboard should drive a decision, not just display a number</h4>
+          <p>The Cost Analytics dashboard didn't stop at showing total spend. It isolated $13.2K in idle cost across 885 specific unused objects, so the finding pointed straight to an action, not just a KPI.</p>
+          <span class="principle-cta">→ see it across Experience</span>
+        </a>
+        <a class="principle-card" href="#alumni-deep-dive">
+          <span class="principle-mark">02</span>
+          <h4>One source of truth beats six spreadsheets</h4>
+          <p>The Penn State Alumni event model started as 6 disparate Excel sources with no shared definition of a KPI. Consolidating them into one model was the real work; the forecast was just what came after.</p>
+          <span class="principle-cta">→ see it in Alumni Event Forecasting</span>
+        </a>
+        <a class="principle-card" href="#alumni-deep-dive">
+          <span class="principle-mark">03</span>
+          <h4>Show the range, not just the point estimate</h4>
+          <p>Every forecast I ship comes with a Conservative / Expected / Optimistic scenario, not a single number, because a stakeholder making a budget call needs to see the range they're actually planning against.</p>
+          <span class="principle-cta">→ see it in Alumni Event Forecasting</span>
+        </a>
+        <a class="principle-card" href="#alzheimers-deep-dive">
+          <span class="principle-mark">04</span>
+          <h4>Build for the audience, not just the tool</h4>
+          <p>The Alzheimer's Market analysis shipped as parallel Python and Tableau dashboards on purpose: the same finding, in the tool each audience already trusts, not a screenshot exported from whichever tool I personally prefer.</p>
+          <span class="principle-cta">→ see it in Alzheimer's Market Overview</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow">$ cat experience.log</p>
+      <h2 class="section-title">5+ years turning messy real-world data into dashboards and decisions leadership can act on</h2>
+
+      <div class="timeline">
+
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title-group">
+              <img src="assets/logos/barton-malow.svg" alt="Barton Malow logo" class="job-logo">
+              <div>
+                <h3 class="job-role">Data Science Intern</h3>
+                <p class="job-company">Barton Malow <span class="job-tag">Featured</span></p>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span class="job-date">May 2026 – Aug 2026</span>
+              <span class="job-loc">Michigan, United States</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li>Built a <strong>Databricks Cost Analytics pipeline</strong> and 4-tab leadership dashboard from Unity Catalog billing/compute data, surfacing <strong>$142K</strong> in lifetime platform spend and <strong>$13.2K</strong> in idle resource cost across <strong>885 unused objects</strong>. Automated an ownership-resolution hierarchy across 933 resources that cut the unowned-spend gap from <strong>85.6% to 54%</strong>.</li>
+            <li>Designed a <strong>Claude AI cost-attribution dashboard</strong> isolating agent query costs from shared Databricks serverless compute (20+ users, 8,000+ queries, $0.53 avg cost/query), revealing AI's share of warehouse spend grew <strong>5.5× in 5 months (1.5% → 8.3%)</strong>, giving leadership real-time cost visibility before it became a budget concern.</li>
+            <li>Engineered a <strong>211-rule automated data quality framework</strong> spanning 23 production tables in a <strong>$159B CRM pipeline</strong>, achieving 100% clean execution and routing a weekly reporting digest to record owners.</li>
+          </ul>
+          <div class="job-skills">
+            <span>Dashboards</span><span>Databricks</span><span>SQL</span><span>Python</span><span>PySpark</span><span>Claude Code</span>
+          </div>
+          <div class="job-links">
+            <a href="https://github.com/tus2014ar/databricks-cost-analytics" target="_blank" rel="noopener">Cost Analytics repo →</a>
+            <a href="https://github.com/tus2014ar/databricks-data-quality-framework" target="_blank" rel="noopener">DQX repo →</a>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title-group">
+              <img src="assets/logos/penn-state.svg" alt="Pennsylvania State University seal" class="job-logo">
+              <div>
+                <h3 class="job-role">Research Assistant, Data Science</h3>
+                <p class="job-company">Pennsylvania State University</p>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span class="job-date">Sep 2025 – May 2026</span>
+              <span class="job-loc">Pennsylvania, United States</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li>Developed forecasting models on historical attendance data, achieving <strong>92% accuracy</strong> and enabling data-driven vendor allocation and capacity planning.</li>
+            <li>Reduced event planning timeline <strong>83% (12 months → 2 months)</strong> by building data-driven workflows, dashboards, and scenario simulations that aligned stakeholders on constraints and priorities.</li>
+            <li>Prototyped autonomous AI agents for continuous auditing and ethical compliance, including WORM-based audit trails, ontology-driven fairness checks, and cybersecurity safeguards aligned with ISO/IEC 42001.</li>
+          </ul>
+          <div class="job-skills">
+            <span>Statistical Modeling</span><span>Forecasting</span><span>Agentic AI</span><span>Python</span><span>SQL</span>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title-group">
+              <img src="assets/logos/oracle.svg" alt="Oracle Corporation logo" class="job-logo">
+              <div>
+                <h3 class="job-role">Staff Data Consultant</h3>
+                <p class="job-company">Oracle Corporation</p>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span class="job-date">Feb 2022 – Dec 2024</span>
+              <span class="job-loc">Bangalore, India</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li>Validated end-to-end billing data pipelines for <strong>600K+ telecom subscribers</strong> using SQL-driven quality checks, anomaly detection rules, and reconciliation reports, maintaining <strong>98%+ accuracy</strong> within SLAs.</li>
+            <li>Built and automated KPI dashboards (churn, usage patterns) with <strong>99% on-time delivery</strong>, enabling leadership to track performance in weekly reviews.</li>
+            <li>Led onsite test efforts, coordinating with offshore analytics teams to deliver readiness dashboards supporting a successful, on-time go-live.</li>
+          </ul>
+          <div class="job-skills">
+            <span>Oracle Database</span><span>SQL</span><span>Data Analysis</span><span>Business Analysis</span>
+          </div>
+          <div class="job-award"><span class="award-badge">Award</span> Oracle "Best Upcoming Talent," FY23 Q3</div>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <div class="job-title-group">
+              <img src="assets/logos/accenture.svg" alt="Accenture logo" class="job-logo">
+              <div>
+                <h3 class="job-role">Data Consultant</h3>
+                <p class="job-company">Accenture Solutions Pvt Ltd</p>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span class="job-date">Jun 2019 – Feb 2022</span>
+              <span class="job-loc">Pune, India</span>
+            </div>
+          </div>
+          <ul class="job-bullets">
+            <li>Identified and resolved <strong>50+ recurring data quality issues</strong> in production billing datasets for a <strong>4.5M-customer</strong> base, improving billing accuracy and customer trust.</li>
+            <li>Automated batch bill-run workflows using SQL scripts and scheduling, cutting processing time from 1 day to 2 hours <strong>(90× faster)</strong> and manual effort by <strong>92%</strong>.</li>
+            <li>Designed a SQL-based data validation framework (row-level checks, reconciliation, exception flags) that reduced discrepancies by <strong>60%</strong> and shortened month-end close by <strong>10%</strong>.</li>
+          </ul>
+          <div class="job-skills">
+            <span>SQL</span><span>Shell Scripting</span><span>Excel</span><span>Client Communication</span>
+          </div>
+          <div class="job-award"><span class="award-badge">Award</span> Accenture "Shared Success Catalyst," Addressing Client &amp; Community Needs</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow">$ ls ./projects</p>
+      <h2 class="section-title">Real systems, real numbers</h2>
+
+      <div class="project-grid" id="projectGrid">
+
+        <article class="project-card project-card-flagship">
+          <div class="project-stats">
+            <div><strong>202,499</strong><span>row dataset</span></div>
+            <div><strong>2</strong><span>parallel dashboards</span></div>
+            <div><strong>3</strong><span>dimensions compared</span></div>
+          </div>
+          <h4>Alzheimer's Market Overview (US)</h4>
+          <p>TRx-based pharmaceutical market analysis across brands, specialties, and channels. 202,499-row dataset, built as parallel Python (Plotly) and Tableau dashboards for direct platform comparison.</p>
+          <div class="project-prod-signals">
+            <span>Built for two audiences: Python and Tableau, same finding</span>
+            <span>Standalone shareable HTML export, no server needed</span>
+          </div>
+          <div class="project-tags"><span>Python</span><span>Pandas</span><span>Plotly</span><span>Tableau</span></div>
+          <a href="https://github.com/tus2014ar/Alzheimer-s-Market-Overview---United-States" target="_blank" rel="noopener" class="project-link">View repo →</a>
+        </article>
+
+        <article class="project-card project-card-flagship">
+          <div class="project-stats">
+            <div><strong>235</strong><span>attendees forecasted</span></div>
+            <div><strong>$49</strong><span>revenue / attendee</span></div>
+            <div><strong>-83%</strong><span>planning timeline</span></div>
+          </div>
+          <h4>Penn State Alumni Event Forecasting</h4>
+          <p>Multi-year (2022–2025) event performance analysis with scenario-based 2026 forecasting, projecting 235 attendees and $49/attendee revenue via a blended trend + recency-weighted model.</p>
+          <div class="project-prod-signals">
+            <span>3-scenario forecast: conservative, expected, optimistic</span>
+            <span>6 Excel sources consolidated into one KPI model</span>
+          </div>
+          <div class="project-tags"><span>Python</span><span>Pandas</span><span>Forecasting</span></div>
+          <a href="https://github.com/tus2014ar/Penn-State-GV-Alumni-Event-Performance-Analysis-Forecasting" target="_blank" rel="noopener" class="project-link">View repo →</a>
+        </article>
+
+      </div>
+
+      <div class="case-study" id="alzheimers-deep-dive">
+        <p class="case-eyebrow">Deep Dive · Independent Project, 2026</p>
+        <h3 class="case-title">Alzheimer's Market Overview: Dual-Platform Dashboards</h3>
+        <div class="case-pwh">
+          <div class="case-pwh-item">
+            <h4>Problem</h4>
+            <p>A 202,499-row TRx pharmaceutical dataset had real signal in it, brand share shifting, specialty channels performing differently, but no single dashboard the whole stakeholder audience actually trusted.</p>
+          </div>
+          <div class="case-pwh-item">
+            <h4>Why</h4>
+            <p>A brand manager who lives in Tableau and an analyst who lives in Python shouldn't have to fight over which tool the truth lives in. The finding matters more than the tool it's rendered in.</p>
+          </div>
+          <div class="case-pwh-item">
+            <h4>How</h4>
+            <p>The same brand/specialty/channel analysis, built twice: once as an interactive Python (Plotly) dashboard exported as a shareable standalone HTML file, once as a native Tableau workbook, so either audience gets the same answer in the tool they already trust.</p>
+          </div>
+        </div>
+
+        <div class="case-diagram" role="img" aria-label="Diagram: a 202,499-row TRx dataset branches into two parallel dashboards, a Python/Plotly standalone HTML dashboard and a native Tableau workbook, both converging on the same finding.">
+          <svg viewBox="0 0 500 190" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+            <defs>
+              <marker id="alz-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" class="case-arrowhead"/>
+              </marker>
+            </defs>
+
+            <rect x="10" y="74" width="110" height="62" rx="6" class="case-node case-node-source"/>
+            <text x="65" y="100" class="case-node-title" text-anchor="middle">TRx Data</text>
+            <text x="65" y="116" class="case-node-sub" text-anchor="middle">202,499 rows</text>
+
+            <line x1="120" y1="95" x2="180" y2="45" class="case-edge" marker-end="url(#alz-arrow)"/>
+            <line x1="120" y1="115" x2="180" y2="155" class="case-edge" marker-end="url(#alz-arrow)"/>
+
+            <rect x="180" y="15" width="140" height="60" rx="6" class="case-node case-node-bronze"/>
+            <text x="250" y="40" class="case-node-title case-node-title-bronze" text-anchor="middle">Python / Plotly</text>
+            <text x="250" y="56" class="case-node-sub" text-anchor="middle">standalone HTML</text>
+
+            <rect x="180" y="125" width="140" height="60" rx="6" class="case-node case-node-silver"/>
+            <text x="250" y="150" class="case-node-title case-node-title-silver" text-anchor="middle">Tableau</text>
+            <text x="250" y="166" class="case-node-sub" text-anchor="middle">native workbook</text>
+
+            <line x1="320" y1="45" x2="380" y2="90" class="case-edge" marker-end="url(#alz-arrow)"/>
+            <line x1="320" y1="155" x2="380" y2="120" class="case-edge" marker-end="url(#alz-arrow)"/>
+
+            <rect x="380" y="74" width="110" height="62" rx="6" class="case-node case-node-dashboard"/>
+            <text x="435" y="100" class="case-node-title case-node-title-dashboard" text-anchor="middle">Same</text>
+            <text x="435" y="116" class="case-node-sub" text-anchor="middle">Finding</text>
+          </svg>
+        </div>
+
+        <div class="case-results">
+          <div class="case-result"><span class="case-result-num case-result-gold">202,499</span><span class="case-result-label">rows analyzed across brand, specialty, channel</span></div>
+          <div class="case-result"><span class="case-result-num case-result-bronze">2</span><span class="case-result-label">parallel dashboards built (Python + Tableau)</span></div>
+          <div class="case-result"><span class="case-result-num case-result-silver">3</span><span class="case-result-label">dimensions compared (brand, specialty, channel)</span></div>
+          <div class="case-result"><span class="case-result-num case-result-gold">1</span><span class="case-result-label">standalone shareable HTML export, no server needed</span></div>
+        </div>
+
+        <p class="case-principle-link">
+          This is where <a href="#principles" class="project-link">principle 04 (build for the audience, not just the
+          tool)</a> isn't an abstraction: the same brand/specialty/channel analysis ships twice, once in Tableau for
+          stakeholders who live there, once in Python for anyone who wants to dig into the code.
+        </p>
+      </div>
+
+      <div class="case-study" id="alumni-deep-dive">
+        <p class="case-eyebrow">Deep Dive · Pennsylvania State University, 2026</p>
+        <h3 class="case-title">Penn State Alumni Event Forecasting</h3>
+        <div class="case-pwh">
+          <div class="case-pwh-item">
+            <h4>Problem</h4>
+            <p>Six years of alumni event data lived in 6 disparate Excel files with no shared KPI definitions, so planning for the next event meant starting from scratch and guessing at the budget.</p>
+          </div>
+          <div class="case-pwh-item">
+            <h4>Why</h4>
+            <p>A budget conversation without a range is just a guess dressed up as a number. Stakeholders needed to see best-case and worst-case, not one point estimate to argue about.</p>
+          </div>
+          <div class="case-pwh-item">
+            <h4>How</h4>
+            <p>Consolidated 6 Excel sources into one unified KPI model, then built a blended trend + recency-weighted forecast with three funding scenarios, conservative, expected, optimistic, so planning moved from reactive to data-informed.</p>
+          </div>
+        </div>
+
+        <div class="case-diagram" role="img" aria-label="Pipeline diagram: 6 disparate Excel files consolidate into one unified KPI model, feeding a recency-weighted trend forecast, producing 3 funding scenarios, presented to stakeholders for a budget decision. A dashed line notes the output is a range, not a single guess.">
+          <svg viewBox="0 0 706 210" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+            <defs>
+              <marker id="alumni-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" class="case-arrowhead"/>
+              </marker>
+            </defs>
+
+            <rect x="10" y="72" width="116" height="62" rx="6" class="case-node case-node-source"/>
+            <text x="68" y="98" class="case-node-title" text-anchor="middle">6 Excel Files</text>
+            <text x="68" y="114" class="case-node-sub" text-anchor="middle">no shared KPIs</text>
+
+            <line x1="126" y1="103" x2="150" y2="103" class="case-edge" marker-end="url(#alumni-arrow)"/>
+
+            <rect x="150" y="72" width="116" height="62" rx="6" class="case-node case-node-bronze"/>
+            <text x="208" y="98" class="case-node-title case-node-title-bronze" text-anchor="middle">Unified Model</text>
+            <text x="208" y="114" class="case-node-sub" text-anchor="middle">one KPI definition</text>
+
+            <line x1="266" y1="103" x2="290" y2="103" class="case-edge" marker-end="url(#alumni-arrow)"/>
+
+            <rect x="290" y="72" width="116" height="62" rx="6" class="case-node case-node-silver"/>
+            <text x="348" y="98" class="case-node-title case-node-title-silver" text-anchor="middle">Trend Forecast</text>
+            <text x="348" y="114" class="case-node-sub" text-anchor="middle">recency-weighted</text>
+
+            <line x1="406" y1="103" x2="430" y2="103" class="case-edge" marker-end="url(#alumni-arrow)"/>
+
+            <rect x="430" y="72" width="116" height="62" rx="6" class="case-node case-node-gold"/>
+            <text x="488" y="98" class="case-node-title case-node-title-gold" text-anchor="middle">3 Scenarios</text>
+            <text x="488" y="114" class="case-node-sub" text-anchor="middle">conservative→optimistic</text>
+
+            <line x1="546" y1="103" x2="570" y2="103" class="case-edge" marker-end="url(#alumni-arrow)"/>
+
+            <rect x="570" y="62" width="116" height="82" rx="6" class="case-node case-node-dashboard"/>
+            <text x="628" y="93" class="case-node-title case-node-title-dashboard" text-anchor="middle">Budget</text>
+            <text x="628" y="107" class="case-node-title case-node-title-dashboard" text-anchor="middle">Decision</text>
+            <text x="628" y="122" class="case-node-sub" text-anchor="middle">stakeholders</text>
+
+            <line x1="488" y1="134" x2="488" y2="162" class="case-edge-dashed"/>
+            <text x="488" y="178" class="case-annotation" text-anchor="middle">a range, not a single guess: conservative to optimistic</text>
+          </svg>
+        </div>
+
+        <div class="case-results">
+          <div class="case-result"><span class="case-result-num case-result-gold">6</span><span class="case-result-label">Excel sources consolidated into one model</span></div>
+          <div class="case-result"><span class="case-result-num case-result-bronze">235</span><span class="case-result-label">attendees forecasted for 2026</span></div>
+          <div class="case-result"><span class="case-result-num case-result-silver">$49</span><span class="case-result-label">projected revenue per attendee</span></div>
+          <div class="case-result"><span class="case-result-num case-result-gold">83%</span><span class="case-result-label">planning timeline cut (12 months to 2)</span></div>
+        </div>
+
+        <p class="case-principle-link">
+          This is where <a href="#principles" class="project-link">principles 02 (one source of truth beats six
+          spreadsheets) and 03 (show the range, not just the point estimate)</a> aren't abstractions: six Excel files
+          became one model, and the forecast ships as three scenarios, not one guess.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH & RECOGNITION ============ -->
+  <section id="research" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow">$ cat research.md</p>
+      <h2 class="section-title">Published work and competitive recognition</h2>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <span class="research-kicker">Published Paper · Springer Nature</span>
+          <h3>Autonomous Multi-Agent Governance: AI Sentinel Framework for Mitigating Psychological Restraints in AI-Driven Fall Management</h3>
+          <p>Accepted and presented at <strong>SEET 2026</strong> (2nd International Conference on Software Engineering of Emerging Technologies), Penn State Behrend, PhD Research Track. Listed on page 76 of the conference abstract book. To be published in the official conference proceedings by Springer Nature.</p>
+          <a href="https://seet26.sw-conf.com/" target="_blank" rel="noopener" class="project-link">View conference →</a>
+        </article>
+
+        <article class="research-card">
+          <span class="research-kicker">Competition · Penn State Nittany AI Challenge 2026</span>
+          <h3>AI Sentinel: Top 10 of 60+ Teams</h3>
+          <p>Won the Prototype Phase and MVP Phase, advanced through funded phases to a Top 10 finish at the Pitch Contest, Hintz Family Alumni Center, University Park.</p>
+        </article>
+
+        <article class="research-card">
+          <span class="research-kicker">Award · Oracle Corporation</span>
+          <h3>"Best Upcoming Talent" (FY23 Q3)</h3>
+          <p>Recognized for exceptional contributions and high-impact performance on the Telia Company billing analytics engagement.</p>
+        </article>
+
+        <article class="research-card">
+          <span class="research-kicker">Leadership · Penn State University</span>
+          <h3>Student Senator</h3>
+          <p>Representing students in discussions with university leadership; championing AI literacy and equitable AI access across Penn State's Commonwealth Caucus.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow">$ cat skills.yaml</p>
+      <h2 class="section-title">Tools I actually ship with</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>BI & Visualization</h4>
+          <p>Tableau · Power BI · Plotly · Matplotlib · Seaborn</p>
+        </div>
+        <div class="skill-group">
+          <h4>Programming</h4>
+          <p>Python (Pandas, NumPy, Matplotlib, Seaborn, scikit-learn) · SQL · R · Java</p>
+        </div>
+        <div class="skill-group">
+          <h4>Analysis & Forecasting</h4>
+          <p>Time Series Forecasting · Scenario Modeling · Regression · Reconciliation · KPI Design</p>
+        </div>
+        <div class="skill-group">
+          <h4>AI Tools</h4>
+          <p>Claude Code · Claude Cowork · Claude Skills · Claude Projects · Claude MCP · ChatGPT · GitHub Copilot · Cursor IDE · Perplexity · Ollama · Google Gemini · Julius AI</p>
+        </div>
+        <div class="skill-group">
+          <h4>Data Engineering & Cloud</h4>
+          <p>Databricks · PySpark · Unity Catalog · Azure · AWS · Oracle Database · PostgreSQL · PL/SQL</p>
+        </div>
+        <div class="skill-group">
+          <h4>Dev Tools</h4>
+          <p>Git · GitHub Actions · Jupyter · Jira</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow">$ cat education.log</p>
+      <h2 class="section-title">Background</h2>
+
+      <div class="edu-grid">
+        <article class="edu-card">
+          <div class="edu-head">
+            <h3>Pennsylvania State University</h3>
+            <span class="edu-date">Aug 2025 – Dec 2026</span>
+          </div>
+          <p class="edu-degree">Master of Data Analytics · GPA 3.96/4</p>
+          <p class="edu-detail">Statistical Analysis, Data-Driven Decision Making, Predictive Analytics, Deep Learning, Natural Language Processing.</p>
+        </article>
+
+        <article class="edu-card">
+          <div class="edu-head">
+            <h3>KIIT University</h3>
+            <span class="edu-date">May 2015 – May 2019</span>
+          </div>
+          <p class="edu-degree">B.Tech, Electronics & Instrumentation Engineering · GPA 3.3/4</p>
+          <p class="edu-detail">Control Systems, Digital Electronics, OOP, Data Structures & Algorithms, Web Technology, Artificial Intelligence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact-section">
+    <div class="section-inner contact-inner">
+      <p class="section-eyebrow">$ mail tushar</p>
+      <h2 class="section-title">Let's build something that ships.</h2>
+      <p class="contact-sub">Open to full-time Data Analyst / Business Intelligence Analyst roles starting Dec 2026.</p>
+      <div class="contact-actions">
+        <a href="mailto:tus2025snoop@outlook.com" class="btn btn-primary">tus2025snoop@outlook.com</a>
+        <a href="assets/Tushar_Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+      <div class="contact-links">
+        <a href="https://github.com/tus2014ar" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-github"/></svg>GitHub</a>
+        <a href="https://www.linkedin.com/in/fnu-tushar-945648131/" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-linkedin"/></svg>LinkedIn</a>
+        <a href="https://medium.com/@tusharsingh_37238" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-medium"/></svg>Medium</a>
+        <a href="https://www.youtube.com/@corporateaspirant8965" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-youtube"/></svg>YouTube</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Tushar. Built to be trusted at a glance.</p>
+</footer>
+
+<script src="script.js?v=10" defer></script>
+</body>
+</html>
